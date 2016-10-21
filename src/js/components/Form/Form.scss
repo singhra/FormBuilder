@@ -3,7 +3,6 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   font-family: $font-family;
 }
 .form-parent > div {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -14,6 +13,23 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   border-style: dashed;
   margin: 20px;
   border-color: #C5CBD1;
+}
+.drawing-div.fields{
+  width: 46px;
+  height: 50px;
+  background-color: white;
+  float: left;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family : $font-family
+}
+.upload-button-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
 }
 .upload-button{
   display: flex;
