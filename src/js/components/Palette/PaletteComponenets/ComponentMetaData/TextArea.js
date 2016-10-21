@@ -41,8 +41,8 @@ export default class Input extends React.Component {
           <form className="" role="form">
            <div className={styles['metadata-group']}>
             <div className={`form-group row`} >
-              <label className='control-label' htmlFor='label'>INPUT </label>
-              <label className='control-label' htmlFor='label'>Label: </label>
+              <label className='control-label' htmlFor='label'>TEXTAREA </label>
+              <label className='control-label' htmlFor='label'>Label Text: </label>
               <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
             <div className={`form-group row`} >
@@ -74,7 +74,7 @@ export default class Input extends React.Component {
               </div>
                <div className={`form-group row`} >
                 <label className='control-label' htmlFor='id'>Placeholder: </label>
-                <input id='placeholder' type='text' onChange={this.inputFieldChange.bind(this,'placeholder')}/>
+                <input id='placeholder' teype='text' onChange={this.inputFieldChange.bind(this,'placeholder')} />
               </div>
                <div className={`form-group row ${styles['text-style']}`} >
                 <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory</span>
@@ -84,8 +84,8 @@ export default class Input extends React.Component {
                 <input id='default' type='text' onChange={this.inputFieldChange.bind(this,'value')}/>
               </div>
                <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Instruction:</label>
-                <input id='instruction' type='text' onChange={this.inputFieldChange.bind(this,'instruction')}/>
+                <label className='control-label' htmlFor='id' onChange={this.inputFieldChange.bind(this,'instruction')}>Instruction:</label>
+                <input id='instruction' type='text'/>
                </div>
              </Panel>
            </div>

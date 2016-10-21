@@ -41,7 +41,7 @@ export default class Input extends React.Component {
           <form className="" role="form">
            <div className={styles['metadata-group']}>
             <div className={`form-group row`} >
-              <label className='control-label' htmlFor='label'>INPUT </label>
+              <label className='control-label' htmlFor='label'>DATEPICKER </label>
               <label className='control-label' htmlFor='label'>Label: </label>
               <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
@@ -53,8 +53,8 @@ export default class Input extends React.Component {
               </div>
             </div>
              <div className={`form-group row`} >
-              <label className='control-label' htmlFor='id'>Id:</label>
-              <input id='id' type='text' onChange={this.inputFieldChange.bind(this,'id')}/>
+              <label className='control-label' htmlFor='id' onChange={this.inputFieldChange.bind(this,'id')}>Id:</label>
+              <input id='id' type='text'/>
             </div>
            </div>
            <div className={styles['metadata-group']}>
@@ -73,19 +73,19 @@ export default class Input extends React.Component {
                 </div>
               </div>
                <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Placeholder: </label>
-                <input id='placeholder' type='text' onChange={this.inputFieldChange.bind(this,'placeholder')}/>
+                <label className='control-label' htmlFor='id' onChange={this.inputFieldChange.bind(this,'placeholder')}>Placeholder: </label>
+                <input id='placeholder' type='text'/>
               </div>
                <div className={`form-group row ${styles['text-style']}`} >
                 <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory</span>
                </div>
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='default'>Default Value:</label>
-                <input id='default' type='text' onChange={this.inputFieldChange.bind(this,'value')}/>
+                <label className='control-label' htmlFor='default' onChange={this.inputFieldChange.bind(this,'value')}>Default Value:</label>
+                <input id='default' type='text'/>
               </div>
                <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Instruction:</label>
-                <input id='instruction' type='text' onChange={this.inputFieldChange.bind(this,'instruction')}/>
+                <label className='control-label' htmlFor='id' onChange={this.inputFieldChange.bind(this,'instruction')}>Instruction:</label>
+                <input id='instruction' type='text'/>
                </div>
              </Panel>
            </div>

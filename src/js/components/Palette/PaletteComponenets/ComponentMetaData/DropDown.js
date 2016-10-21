@@ -27,21 +27,31 @@ export default class Input extends React.Component {
   labelPositionChange(e,position){
     let val = position
   }
+  SortOrderChange(e,position){
+    let val = position
+  }
   typeChange(e,field){
     let val = e.target.value
   }
-  isMandatoryChange(e){
+  isSortableChange(e){
     debugger
-    let isRequired = this.refs.isMandatory.checked
+    let isRequired = this.refs.isSortable.checked
   }
-
+  isSearchableChange(e){
+    debugger
+    let isRequired = this.refs.isSearchable.checked
+  }
+  isMultiSelectChange(e){
+    debugger
+    let isRequired = this.refs.isMultiSelect.checked
+  }
    render() {
       return (
         <div>
           <form className="" role="form">
            <div className={styles['metadata-group']}>
             <div className={`form-group row`} >
-              <label className='control-label' htmlFor='label'>INPUT </label>
+              <label className='control-label' htmlFor='label'>DROPDOWN</label>
               <label className='control-label' htmlFor='label'>Label: </label>
               <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
@@ -64,29 +74,30 @@ export default class Input extends React.Component {
             </span>
             <Panel collapsible className={styles['panel']} expanded={this.state.openBasicPanel} eventKey="1">
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='label'>Type: </label>
+                <label className='control-label' htmlFor='default'>Options List:</label>
+                <textArea id='option-list' type='text' onChange={this.inputFieldChange.bind(this,'option-list')}/>
+                <label className='control-label' htmlFor='default'>Note- First option will become Default Value</label>
+              </div>
+              <div className={`form-group row`} >
+                <label className='control-label' htmlFor='id'>Separator:</label>
+                <input id='separator' type='text' onChange={this.inputFieldChange.bind(this,'separator')} maxLength= '1'/>
+              </div>
+              <div className={`form-group row ${styles['text-style']}`} >
+                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isSearchableChange.bind(this)} ref='isSearchable'/>Is Searchable?</span>
+              </div>
+              <div className={`form-group row ${styles['text-style']}`} >
+                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isSortableChange.bind(this)} ref='isSortable'/>Is Sortable?</span>
+              </div>
+              <div className={`form-group row`} >
+                <label className='control-label' htmlFor='label'>Sort Order:</label>
                 <div className={`${styles['radio-group']} ${styles['text-style']}`}>
-                  <span style={{width:'50%'}}><input id='text' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'text')}/>text</span>
-                  <span style={{width:'50%'}}><input id='number' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'number')}/>number</span>
-                  <span style={{width:'50%'}}><input id='email' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'email')}/>email</span>
-                  <span style={{width:'50%'}}><input id='password' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'password')}/>password</span>
+                  <span style={{width:'50%'}}><input  type='radio' name='type' style={{width:'20px'}} onChange={this.SortOrderChange.bind(this,'increasing')}/>Alphabetical</span>
+                  <span style={{width:'50%'}}><input  type='radio' name='type' style={{width:'20px'}} onChange={this.SortOrderChange.bind(this,'decreasing')}/>Reverse Alphabetical</span>
                 </div>
               </div>
-               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Placeholder: </label>
-                <input id='placeholder' type='text' onChange={this.inputFieldChange.bind(this,'placeholder')}/>
+              <div className={`form-group row ${styles['text-style']}`} >
+                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMultiSelectChange.bind(this)} ref='isMultiSelect'/>Is MultiSelect?</span>
               </div>
-               <div className={`form-group row ${styles['text-style']}`} >
-                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory</span>
-               </div>
-              <div className={`form-group row`} >
-                <label className='control-label' htmlFor='default'>Default Value:</label>
-                <input id='default' type='text' onChange={this.inputFieldChange.bind(this,'value')}/>
-              </div>
-               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Instruction:</label>
-                <input id='instruction' type='text' onChange={this.inputFieldChange.bind(this,'instruction')}/>
-               </div>
              </Panel>
            </div>
             <div className={styles['metadata-group']}>

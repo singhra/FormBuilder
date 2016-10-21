@@ -34,6 +34,9 @@ export default class Input extends React.Component {
     debugger
     let isRequired = this.refs.isMandatory.checked
   }
+  DirectionChange(e,position){
+    let val = position
+  }
 
    render() {
       return (
@@ -41,7 +44,7 @@ export default class Input extends React.Component {
           <form className="" role="form">
            <div className={styles['metadata-group']}>
             <div className={`form-group row`} >
-              <label className='control-label' htmlFor='label'>INPUT </label>
+              <label className='control-label' htmlFor='label'>RADIO BUTTON </label>
               <label className='control-label' htmlFor='label'>Label: </label>
               <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
@@ -64,28 +67,19 @@ export default class Input extends React.Component {
             </span>
             <Panel collapsible className={styles['panel']} expanded={this.state.openBasicPanel} eventKey="1">
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='label'>Type: </label>
-                <div className={`${styles['radio-group']} ${styles['text-style']}`}>
-                  <span style={{width:'50%'}}><input id='text' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'text')}/>text</span>
-                  <span style={{width:'50%'}}><input id='number' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'number')}/>number</span>
-                  <span style={{width:'50%'}}><input id='email' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'email')}/>email</span>
-                  <span style={{width:'50%'}}><input id='password' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'password')}/>password</span>
-                </div>
+                <label className='control-label' htmlFor='default' />Options List:</label>
+                <textArea id='option-list' type='text' onChange={this.inputFieldChange.bind(this,'option-list')}>
               </div>
-               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Placeholder: </label>
-                <input id='placeholder' type='text' onChange={this.inputFieldChange.bind(this,'placeholder')}/>
-              </div>
-               <div className={`form-group row ${styles['text-style']}`} >
-                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory</span>
-               </div>
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='default'>Default Value:</label>
-                <input id='default' type='text' onChange={this.inputFieldChange.bind(this,'value')}/>
+                <label className='control-label' htmlFor='id'>Separator:</label>
+                <input id='separator' type='text' onChange={this.inputFieldChange.bind(this,'separator')}/>
               </div>
                <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Instruction:</label>
-                <input id='instruction' type='text' onChange={this.inputFieldChange.bind(this,'instruction')}/>
+                <label className='control-label' htmlFor='id'>Arrangement of Options:</label>
+                <div className={`${styles['radio-group']} ${styles['text-style']}`}>
+                  <span style={{width:'50%'}}><input  type='radio' name='type' style={{width:'20px'}} onChange={this.DirectionChange.bind(this,'left')}/>Horizontal</span>
+                  <span style={{width:'50%'}}><input  type='radio' name='type' style={{width:'20px'}} onChange={this.DirectionChange.bind(this,'top')}/>Vertical</span>
+                </div>
                </div>
              </Panel>
            </div>

@@ -20,7 +20,6 @@ export default class Form extends React.Component {
     drop(ev) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
-        console.log(data)
         var newElement = "";
         switch(data){
           case 'input-field': newElement = "<div class=\"fields\">Input</div>"; break;

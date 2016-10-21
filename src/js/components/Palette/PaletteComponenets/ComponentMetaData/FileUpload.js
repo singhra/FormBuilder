@@ -41,7 +41,7 @@ export default class Input extends React.Component {
           <form className="" role="form">
            <div className={styles['metadata-group']}>
             <div className={`form-group row`} >
-              <label className='control-label' htmlFor='label'>INPUT </label>
+              <label className='control-label' htmlFor='label'>FILE UPLOAD BOX </label>
               <label className='control-label' htmlFor='label'>Label: </label>
               <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
@@ -63,29 +63,20 @@ export default class Input extends React.Component {
              <span className={styles['text-style']}>Basic Attributes</span>
             </span>
             <Panel collapsible className={styles['panel']} expanded={this.state.openBasicPanel} eventKey="1">
-              <div className={`form-group row`} >
-                <label className='control-label' htmlFor='label'>Type: </label>
-                <div className={`${styles['radio-group']} ${styles['text-style']}`}>
-                  <span style={{width:'50%'}}><input id='text' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'text')}/>text</span>
-                  <span style={{width:'50%'}}><input id='number' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'number')}/>number</span>
-                  <span style={{width:'50%'}}><input id='email' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'email')}/>email</span>
-                  <span style={{width:'50%'}}><input id='password' type='radio' name='type-basic' style={{width:'20px'}} onChange={this.typeChange.bind(this,'password')}/>password</span>
-                </div>
-              </div>
                <div className={`form-group row`} >
                 <label className='control-label' htmlFor='id'>Placeholder: </label>
                 <input id='placeholder' type='text' onChange={this.inputFieldChange.bind(this,'placeholder')}/>
               </div>
                <div className={`form-group row ${styles['text-style']}`} >
-                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory</span>
+                <span><input type='checkbox'  style={{width:'20px'}} onChange={this.isMandatoryChange.bind(this)} ref='isMandatory'/>Is Mandatory?</span>
                </div>
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='default'>Default Value:</label>
-                <input id='default' type='text' onChange={this.inputFieldChange.bind(this,'value')}/>
+                <label className='control-label' htmlFor='default'>File Types allowed:</label>
+                <textArea id='file-types-input' type='text' onChange={this.inputFieldChange.bind(this,'file-types-input')}/>
               </div>
                <div className={`form-group row`} >
-                <label className='control-label' htmlFor='id'>Instruction:</label>
-                <input id='instruction' type='text' onChange={this.inputFieldChange.bind(this,'instruction')}/>
+                <label className='control-label' htmlFor='id' onChange={this.inputFieldChange.bind(this,'instruction')}>Instruction:</label>
+                <input id='instruction' type='text'/>
                </div>
              </Panel>
            </div>
