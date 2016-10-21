@@ -1,0 +1,27 @@
+$font-family : industry-si,HelveticaNeue,sans-serif;
+.fields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46%;
+    height: 50px;
+    background-color: white;
+    float: left;
+    margin: 5px;
+    border-radius: 5px;
+    font-family : $font-family
+}
+.layout{
+    margin: 10px;
+    margin-top: 30px;
+    display: flex;
+    background-color: #6ea4c4;
+    border-radius: 5px;
+    font-family : $font-family
+}
+.basic-fields{
+    padding: 5px;
+    padding-left: 10px;
+    color: white;
+    font-family : $font-family
+}

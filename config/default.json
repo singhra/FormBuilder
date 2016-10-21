@@ -1,0 +1,50 @@
+{
+  "appName": "adproduct",
+  "cookieDomain": "localhost",
+  "port": 8080,
+  "es": {
+    "hosts": "localhost:8080",
+    "isAmazonES": false
+  },
+  "ec": {
+    "endpoint": "localhost",
+    "port": "6379",
+    "ttl": "31536000"
+  },
+  "adproduct": {
+    "assetClientId": "1102569986",
+    "assetClientSecret": "ZDM2M2ViYTYtYTExNS0zNTk5LTg3MGYtOGUyOGNjZTJhOWFlOkFMTA==",
+    "baseAssetUrl": "http://astmgr-tomcat-elb-1927624131.us-east-1.elb.amazonaws.com/asset-manager/v1/",
+    "assetManagementUrls": {
+      "oAuthUrl": "access_token?grant_type=password",
+      "allcategoryList":"asset-categories?access_token=",
+      "brandList":"brands?access_token="
+    },
+    "baseInternalUrl": "http://astmgr-tomcat-elb-1927624131.us-east-1.elb.amazonaws.com:8081",
+    "baseExternalUrl": "https://eq3rgwelbf.execute-api.us-west-2.amazonaws.com",
+    "internalHost": "astmgr-tomcat-elb-1927624131.us-east-1.elb.amazonaws.com:8081",
+    "externalHost" : "eq3rgwelbf.execute-api.us-west-2.amazonaws.com",
+    "baseExternalPath": "/adproduct_staging/v1",
+    "baseInternalPath": "/adproduct-api/v1",
+    "paths":{
+      "create": "/adproduct",
+      "save": "/adproduct/<guid>",
+      "publish": "/adproduct/<guid>/publish",
+      "search": "/adproduct/search",
+      "get": "/adproduct/<guid>",
+      "fileUpload": "/file/upload",
+      "submitPollResult": "/adproduct/<guid>/submit",
+      "getPollResult": "/adproduct/<guid>/result"
+    },
+    "baseRegion": "us-west-2",
+    "baseService": "execute-api",
+    "awsAccessKeyId": "AKIAI3YXSI5GJTKXOLRQ",
+    "awsSecretAccessKey" : "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"
+  },
+  "api": {
+    "auth": {
+      "user":"YWRtaW4=",
+      "pass":"YWRtaW4="
+    }
+  }
+}

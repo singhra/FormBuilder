@@ -1,0 +1,29 @@
+$font-family : industry-si,HelveticaNeue,sans-serif;
+.form-parent {
+  font-family: $font-family;
+}
+.form-parent > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+}
+.drawing-div{
+  height: 500px;
+  border-style: dashed;
+  margin: 20px;
+  border-color: #C5CBD1;
+}
+.upload-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+.drag-text-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

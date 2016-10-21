@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Ad Product
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(charset="utf-8")
+    link(rel='stylesheet' href='//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet',type='text/css', href='/static/styles.css')
+    link(rel='stylesheet',type='text/css', href='/static/Fonts/si-fonts.css')
+
+    script(src='//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js')
+    script(src='//ajax.aspnetcdn.com/ajax/jquery.ui/1.11.4/jquery-ui.min.js')
+    script(src='//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js')
+
+
+  body
+    div#app.ReactApp
+    block scripts
+      script(src='/static/bundle.js')

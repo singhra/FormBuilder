@@ -1,0 +1,20 @@
+{
+  "adproduct": {
+    "baseAssetUrl": "http://ape-asset-manager.timeinc.net/v1/",
+    "baseInternalUrl": "http://apeadproductsbackend.2bempppazr.us-east-1.elasticbeanstalk.com",
+    "baseExternalUrl": "https://dnokhmeepk.execute-api.us-east-1.amazonaws.com",
+    "internalHost": "apeadproductsbackend.2bempppazr.us-east-1.elasticbeanstalk.com",
+    "externalHost": "dnokhmeepk.execute-api.us-east-1.amazonaws.com",
+    "baseExternalPath": "/adproduct_prod/v1",
+    "baseInternalPath":"/v1",
+    "baseRegion": "us-east-1",
+    "awsAccessKeyId": "AKIAITRKSN2Y4CF2J63A",
+    "awsSecretAccessKey" : "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"
+  },
+  "api": {
+   "auth": {
+     "user":"dGlhZG1pbg==",
+     "pass":"NyVXaTk5MVYxaVU1"
+   }
+ }
+}

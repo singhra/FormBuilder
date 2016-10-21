@@ -1,0 +1,19 @@
+$font-family : industry-si,HelveticaNeue,sans-serif;
+.tab-list > .tabs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(213, 213, 213, 0.68);
+    font-family : $font-family;
+}
+.tab-list{
+    display: flex;
+    width: 50%;
+    margin-bottom : 0px;
+    font-family : $font-family
+}
+.nav-tabs{
+    padding: 0px 20px;
+     font-family : $font-family
+}
+
