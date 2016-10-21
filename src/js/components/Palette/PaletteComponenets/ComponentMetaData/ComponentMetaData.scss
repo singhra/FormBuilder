@@ -1,0 +1,36 @@
+ $font-family : industry-si,HelveticaNeue,sans-serif;
+ .metadata-group{
+    background-color: #6ea4c4;
+    border-radius: 5px;
+    font-family : $font-family;
+    margin-top: 20px;
+    padding: 10px;
+    margin-right : 15px;
+    margin-left : 15px;
+
+  }
+  .metadata-group div {
+    margin-right : 10px;
+    margin-left : 10px;
+  }
+  .metadata-group .panel {
+    margin : 0px
+  }
+  .metadata-group label {
+    display: block;
+    color: white;
+  }
+  .metadata-group .radio-group{
+    display : flex;
+    flex-wrap: wrap;
+  }
+  .metadata-group input,textArea {
+    width : 100%
+  }
+.text-style{
+  color : white;
+}
+.expander {
+  display: flex;
+  cursor: pointer;
+}

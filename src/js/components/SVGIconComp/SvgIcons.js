@@ -247,3 +247,17 @@ export class UploadIcon extends React.Component{
     );
   }
 }
+
+export class Expander extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    const {height,width,color,size,fill1,fill2,viewBox} = this.props;
+    return (
+      <BuildNewSVG color={color} height={height} viewBox={viewBox} width={width} size={size} fill1={fill1} fill2 ={fill2}
+        path1='M0 0h24v24H0z'
+        path2='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z' />
+    );
+  }
+}

@@ -11,7 +11,23 @@
     width: 100%;
     top: 14px;
 }
-
+.panel-default{
+  border-color: transparent;
+  padding: 0px;
+  margin:0px;
+}
+.panel {
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+}
+.panel .panel-body{
+  margin: 0px;
+  padding: 0px;
+}
+.panel .panel-collapse{
+  margin:0px;
+}
 @media (max-width: 768px){
   .form-group label{
     display: none;

@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './ComponentsLayout.scss'
+import Input from '../ComponentMetaData/Input'
 
 
 export default class ComponentsLayout extends React.Component {
+
    render() {
       return (
         <div>
-          <div className={styles['layout']}>
+        {/* <div className={styles['layout']}>
             <div style={{margin:'10px'}}>
               <div className={styles['basic-fields']}>Basic Fields</div>
               <div className={styles['fields']}>Input</div>
@@ -31,7 +33,8 @@ export default class ComponentsLayout extends React.Component {
               <div className={styles['fields']}>Tags</div>
               <div className={styles['fields']}>Date Picker</div>
              </div>
-          </div>
+          </div> */}
+          <Input/>
         </div>
       );
    }
