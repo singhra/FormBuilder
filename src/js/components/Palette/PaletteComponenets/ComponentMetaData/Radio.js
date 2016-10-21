@@ -67,8 +67,8 @@ export default class Input extends React.Component {
             </span>
             <Panel collapsible className={styles['panel']} expanded={this.state.openBasicPanel} eventKey="1">
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='default' />Options List:</label>
-                <textArea id='option-list' type='text' onChange={this.inputFieldChange.bind(this,'option-list')}>
+                <label className='control-label' htmlFor='default'>Options List:</label>
+                <textArea id='option-list' type='text' onChange={this.inputFieldChange.bind(this,'option-list')} />
               </div>
               <div className={`form-group row`} >
                 <label className='control-label' htmlFor='id'>Separator:</label>

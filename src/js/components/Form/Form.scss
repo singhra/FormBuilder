@@ -13,6 +13,7 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   border-style: dashed;
   margin: 20px;
   border-color: #C5CBD1;
+  overflow: auto;
 }
 .drawing-div.fields{
   width: 46px;
@@ -42,4 +43,59 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+ .metadata-group{
+
+    font-family : $font-family;
+    margin-top: 20px;
+    padding: 10px;
+    margin-right : 15px;
+    margin-left : 15px;
+
+  }
+  .metadata-group div {
+    margin-right : 10px;
+    margin-left : 10px;
+  }
+  .metadata-group .panel {
+    margin : 0px
+  }
+  .metadata-group label {
+    display: block;
+  }
+  .metadata-group .radio-group{
+    display : flex;
+    flex-wrap: wrap;
+  }
+  .metadata-group input,textArea {
+    width : 100%
+  }
+.text-style{
+  color : white;
+}
+.expander {
+  display: flex;
+  cursor: pointer;
+}
+.generated-code-div{
+  height: 200px;
+  display : flex;
+
+}
+.generated-html{
+  overflow: auto;
+  width: 60%;
+  background-color: aliceblue;
+  margin: 0px 20px 20px 20px;
+  padding: 15px;
+  overflow: auto;
+}
+.generated-css{
+  overflow: auto;
+  width: 40%;
+  background-color: aliceblue;
+  margin: 0px 20px 20px 20px;
+  padding: 15px;
+  float: left;
+  overflow: auto;
 }

@@ -14,12 +14,11 @@ export default class Layout extends React.Component {
     }
   }
   fieldSelected(field,e){
-    console.log(field)
-    debugger
-    let ele = BuilderHelper.getElement('input')
+    console.log('in layout ',field)
     this.setState({
-      ele : ele
+      ele : field
     })
+
   }
    render() {
       return (
@@ -28,10 +27,12 @@ export default class Layout extends React.Component {
           <div className={styles['parent-layout']}>
             <div className='row' style={{marginRight :'10px'}}>
               <div className='col-xs-3'>
-                <Palette fieldSelected={this.fieldSelected.bind(this)}/>
+                <Palette fieldSelected={this.state.ele} />
               </div>
               <div className={`col-xs-9 ${styles['form-cretation']}`}>
-                 <Form element={this.state.ele}/>
+               <div>
+                 <Form fieldSelected={this.fieldSelected.bind(this)}/>
+               </div>
               </div>
             </div>
           </div>

@@ -261,3 +261,16 @@ export class Expander extends React.Component{
     );
   }
 }
+export class BackIcon extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    const {height,width,color,size,fill1,fill2,viewBox} = this.props;
+    return (
+      <BuildNewSVG color={color} height={height} viewBox={viewBox} width={width} size={size} fill1={fill1} fill2 ={fill2}
+        path1='M0 0h24v24H0z'
+        path2='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z' />
+    );
+  }
+}

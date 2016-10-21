@@ -17,3 +17,22 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
      font-family : $font-family
 }
 
+.metadata-heading{
+    font-family : $font-family;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.back-btn{
+    margin-left: 20px;
+    margin-top: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #0a1529;
+}

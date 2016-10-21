@@ -31,7 +31,6 @@ export default class Input extends React.Component {
     let val = e.target.value
   }
   isMandatoryChange(e){
-    debugger
     let isRequired = this.refs.isMandatory.checked
   }
 
