@@ -34,22 +34,23 @@ render() {
             <div id="dropdown-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Drop Down</div>
             <div id="checkbox-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Checkbox</div>
             <div id="radio-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Radio</div>
-            <div id="upload-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>File Upload</div>
-            <div id="tags-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Tags</div>
             <div id="datepicker-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Date Picker</div>
+            <div id="label-field" className={styles['fields']}>Label</div>
+            <div id="label-field" className={styles['fields']}>Heading</div>
           </div>
         </div>
          <div id="advanced-layout" className={styles['layout']}>
           <div style={{margin:'10px'}}>
             <div className={styles['basic-fields']}>Advance Fields</div>
             <div id="row-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}>Row</div>
-            <div className={styles['fields']}>Drop Down</div>
-            <div className={styles['fields']}>TextArea</div>
-            <div className={styles['fields']}>Checkbox</div>
-            <div className={styles['fields']}>Radio</div>
-            <div className={styles['fields']}>File Upload</div>
-            <div className={styles['fields']}>Tags</div>
-            <div className={styles['fields']}>Date Picker</div>
+            <div id="upload-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>File Upload</div>
+            <div id="tags-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}className={styles['fields']}>Tags</div>
+            <div className={styles['fields']}>Accordion</div>
+            <div className={styles['fields']}>List Builder</div>
+            <div className={styles['fields']}>List Ranker</div>
+            <div className={styles['fields']}>Simple Table</div>
+            <div className={styles['fields']}>Pair Table</div>
+
            </div>
         </div>
        </div>

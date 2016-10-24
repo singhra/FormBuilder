@@ -8,7 +8,9 @@ import * as appActions from 'js/actions/appActions';
 
 @connect(state => ({
   updateStore : state.updateStore,
-  updatedFieldKey : state.updatedFieldKey
+  updatedFieldKey : state.updatedFieldKey,
+  elementClicked: state.elementClicked
+
   }))
 export default class TextArea extends React.Component {
  constructor(props){
@@ -21,9 +23,11 @@ export default class TextArea extends React.Component {
 
   }
   componentWillReceiveProps(nextProps){
-    this.setState({
-      fieldKey : nextProps.fieldKey
-    })
+   if(nextProps.elementClicked){
+      this.setState({
+        fieldKey : nextProps.elementClicked
+      })
+    }
   }
   basicPanelHandler(e){
     this.setState({
