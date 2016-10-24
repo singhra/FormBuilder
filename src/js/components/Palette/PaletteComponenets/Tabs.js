@@ -3,8 +3,16 @@ import styles from './Tabs.scss'
 import Components from './ComponentsToDnD/ComponentsLayout'
 import {PlusIcon,BackIcon} from '../../SVGIconComp/SvgIcons'
 import * as BuilderHelper from '../../../utils/BuilderHelper'
+import * as StorageHelper from '../../../utils/StorageHelper'
+import {connect} from 'react-redux';
+import * as appActions from 'js/actions/appActions';
+import Row from './ComponentMetaData/Row'
 
-
+@connect(state => ({
+  updateStore : state.updateStore,
+  updatedFieldKey : state.updatedFieldKey,
+  elementClicked : state.elementClicked
+  }))
 export default class Palette extends React.Component {
   constructor(props){
     super(props)
@@ -13,7 +21,18 @@ export default class Palette extends React.Component {
    }
   }
 componentWillReceiveProps(nextProps){
-  let ele = BuilderHelper.getMetaData(nextProps.fieldSelected)
+  let ele = ''
+  if(nextProps.fieldSelected === 'row-field') {
+    ele = <Row/>
+  } else {
+    if(!nextProps.elementClicked && nextProps.fieldSelected && nextProps.fieldKey){
+       let fieldSelected = StorageHelper.getField(nextProps.fieldKey)
+       ele = BuilderHelper.getMetaData(fieldSelected,nextProps.fieldKey,'onClick')
+    } else {
+       let fieldSelected = StorageHelper.getField(nextProps.elementClicked)
+       ele = BuilderHelper.getMetaData(fieldSelected,nextProps.elementClicke,'onClick')
+    }
+  }
   this.setState({
     metadataComp : ele
   })

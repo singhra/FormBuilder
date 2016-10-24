@@ -7,10 +7,10 @@ export default class Palette extends React.Component {
     super(props)
   }
    render() {
-    console.log('in palette',this.props.fieldSelected)
+    console.log('in palette',this.props.fieldKey)
       return (
          <div className={styles['palette']}>
-            <Tabs fieldSelected={this.props.fieldSelected}/>
+            <Tabs fieldSelected={this.props.fieldSelected} fieldKey={this.props.fieldKey}/>
          </div>
       );
    }

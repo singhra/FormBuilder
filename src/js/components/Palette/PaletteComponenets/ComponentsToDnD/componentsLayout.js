@@ -15,9 +15,6 @@ export default class ComponentsLayout extends React.Component {
 
 constructor(props){
   super(props)
-  this.state={
-    metadataComp : ''
-  }
 }
 
 drag(ev) {
@@ -28,7 +25,6 @@ drag(ev) {
 render() {
   return (
     <div>
-    {!this.state.metadataComp ?
       <div>
         <div id="basic-layout" className={styles['layout']}>
           <div style={{margin:'10px'}}>
@@ -46,9 +42,9 @@ render() {
          <div id="advanced-layout" className={styles['layout']}>
           <div style={{margin:'10px'}}>
             <div className={styles['basic-fields']}>Advance Fields</div>
-            <div className={styles['fields']}>Input</div>
-            <div className={styles['fields']}>TextArea</div>
+            <div id="row-field" className={styles['fields']} draggable="true" onDragStart={this.drag.bind(this)}>Row</div>
             <div className={styles['fields']}>Drop Down</div>
+            <div className={styles['fields']}>TextArea</div>
             <div className={styles['fields']}>Checkbox</div>
             <div className={styles['fields']}>Radio</div>
             <div className={styles['fields']}>File Upload</div>
@@ -56,12 +52,7 @@ render() {
             <div className={styles['fields']}>Date Picker</div>
            </div>
         </div>
-       </div>:
-      <div id='acd'>
-      <div><h3>Meta Data</h3></div>
-      {this.state.metadataComp}
-      </div>
-    }
+       </div>
     </div>
   );
 }

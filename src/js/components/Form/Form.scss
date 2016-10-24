@@ -60,9 +60,7 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   .metadata-group .panel {
     margin : 0px
   }
-  .metadata-group label {
-    display: block;
-  }
+
   .metadata-group .radio-group{
     display : flex;
     flex-wrap: wrap;
@@ -70,6 +68,13 @@ $font-family : industry-si,HelveticaNeue,sans-serif;
   .metadata-group input,textArea {
     width : 100%
   }
+  .field-row{
+    justify-content: center;
+    align-items: center;
+  }
+.note-class {
+  font-size: smaller;
+}
 .text-style{
   color : white;
 }

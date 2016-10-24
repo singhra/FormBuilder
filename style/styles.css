@@ -1,6 +1,7 @@
 .form-group .required:after {
   content:"*";
   color:red;
+  margin-left: 2px;
 }
 .modal-dialog {
     width: 60% !important;
@@ -27,6 +28,10 @@
 }
 .panel .panel-collapse{
   margin:0px;
+}
+.control-label{
+  margin-right: 5px;
+  padding-right: 2px;
 }
 @media (max-width: 768px){
   .form-group label{

@@ -2,14 +2,28 @@ import React from 'react';
 import styles from './ComponentMetaData.scss'
 import {Panel} from 'react-bootstrap'
 import {Expander} from '../../../SVGIconComp/SvgIcons'
+import * as StorageHelper from '../../../../utils/StorageHelper'
+import {connect} from 'react-redux';
+import * as appActions from 'js/actions/appActions';
 
+@connect(state => ({
+  updateStore : state.updateStore,
+  updatedFieldKey : state.updatedFieldKey
+  }))
 export default class Input extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       openBasicPanel : false,
       openStylePanel : false,
+      fieldKey : this.props.fieldKey
     }
+
+  }
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      fieldKey : nextProps.fieldKey
+    })
   }
   basicPanelHandler(e){
     this.setState({
@@ -21,20 +35,35 @@ export default class Input extends React.Component {
       openStylePanel : !this.state.openStylePanel
     })
   }
-  inputFieldChange(e,field){
+  inputFieldChange(field,e){
     let val = e.target.value
+    StorageHelper.updateField(this.state.fieldKey,'metadata',field,val)
+    this.props.dispatch(appActions.updateStore(this.props.updateStore+1))
+    this.props.dispatch(appActions.updatedFieldKey(this.state.fieldKey))
+
   }
-  labelPositionChange(e,position){
+  labelPositionChange(position,e){
     let val = position
+    StorageHelper.updateField(this.state.fieldKey,'metadata','labelPosition',val)
+    this.props.dispatch(appActions.updateStore(this.props.updateStore+1))
+    this.props.dispatch(appActions.updatedFieldKey(this.state.fieldKey))
+
   }
-  typeChange(e,field){
-    let val = e.target.value
+  typeChange(type,e){
+    let val = type
+    StorageHelper.updateField(this.state.fieldKey,'metadata','type',val)
+    this.props.dispatch(appActions.updateStore(this.props.updateStore+1))
+    this.props.dispatch(appActions.updatedFieldKey(this.state.fieldKey))
   }
   isMandatoryChange(e){
     let isRequired = this.refs.isMandatory.checked
+    StorageHelper.updateField(this.state.fieldKey,'metadata','isRequired',isRequired)
+    this.props.dispatch(appActions.updateStore(this.props.updateStore+1))
+    this.props.dispatch(appActions.updatedFieldKey(this.state.fieldKey))
   }
 
    render() {
+    let {metadata} = this.props
       return (
         <div>
           <form className="" role="form">
@@ -42,7 +71,7 @@ export default class Input extends React.Component {
             <div className={`form-group row`} >
               <label className='control-label' htmlFor='label'>INPUT </label>
               <label className='control-label' htmlFor='label'>Label: </label>
-              <input id='label' type='text' onChange={this.inputFieldChange.bind(this,'label')}/>
+              <input id='label' type='text' value={metadata.label} onChange={this.inputFieldChange.bind(this,'label')}/>
             </div>
             <div className={`form-group row`} >
              <label className='control-label' htmlFor='label'>Label Position:</label>

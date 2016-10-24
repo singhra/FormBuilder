@@ -8,12 +8,8 @@ export function getElement(fieldObj){
    let comp = ''
    let html = ''
    let css = ''
-  if(fieldObj.field.indexOf('input') != -1||fieldObj.field.indexOf('textarea') != -1){
-    let field = fieldObj.field.indexOf('input') != -1 ?
-       <input id={fieldObj.id} type={fieldObj.type} placeholder={fieldObj.placeholder}/> :
-       <textarea id={fieldObj.id} type={fieldObj.type} placeholder={fieldObj.placeholder}/>
-
-    let display = fieldObj.labelPosition === 'top' ? 'block' : ''
+  if(fieldObj.field.indexOf('input') != -1){
+    let display = fieldObj.labelPosition === 'top' ? '' : 'flex'
     let style = {
       display : display
     }
@@ -22,37 +18,66 @@ export function getElement(fieldObj){
      }`
      comp = <div>
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='label' style={style}>{fieldObj.label}</label>
-               {field}
+                <div className={`col-lg-12 col-md-12 col-sm-12 col-xs-12 ${styles['field-row']}`} style={style}>
+                  <label className={fieldObj.isRequired ? "control-label required" : "control-label"}  htmlFor='label'>{fieldObj.label}</label>
+                 <input className="form-control"
+                       id={fieldObj.id}
+                       type={fieldObj.type}
+                       placeholder={fieldObj.placeholder}
+                       required={fieldObj.isRequired}/>
+                 {fieldObj.instruction ?
+                  <p className={styles['note-class']}>{fieldObj.instruction}</p> : null}
+                 </div>
               </div>
             </div>
      html = `<div>
               <div className="form-group row">
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <label className='control-label' htmlFor='label'>${fieldObj.label}</label>
-                ${field}
+                 <input className="form-control"
+                       id=${fieldObj.id}
+                       type=${fieldObj.type}
+                       placeholder=${fieldObj.placeholder}
+                       required=${fieldObj.isRequired}/>
+                </div>
               </div>
             </div>`
 
-  } else if(fieldObj.field.indexOf('') != -1){
-     let display = fieldObj.labelPosition === 'top' ? 'block' : ''
-     let style = {
-       display : display
-     }
+  } else if(fieldObj.field.indexOf('textarea') != -1){
+    let display = fieldObj.labelPosition === 'top' ? '' : 'flex'
+    let style = {
+      display : display
+    }
      css = `.${fieldObj.css.className}{
         display : ${display}
      }`
      comp = <div>
               <div className={`form-group row`} >
-                <label className='control-label' htmlFor='label' style={style}>{fieldObj.label}</label>
-               {field}
+                <div className={`col-lg-12 col-md-12 col-sm-12 col-xs-12 ${styles['field-row']}`} style={style}>
+                  <label className={fieldObj.isRequired ? "control-label required" : "control-label"}  htmlFor='label'>{fieldObj.label}</label>
+                 <textArea className="form-control"
+                       id={fieldObj.id}
+                       type={fieldObj.type}
+                       placeholder={fieldObj.placeholder}
+                       required={fieldObj.isRequired}/>
+                 {fieldObj.instruction ?
+                  <p className={styles['note-class']}>{fieldObj.instruction}</p> : null}
+                 </div>
               </div>
             </div>
-     html = `<div>
+     html = `<code>
               <div className="form-group row">
+                <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                 <label className='control-label' htmlFor='label'>${fieldObj.label}</label>
-                ${field}
+                 <textArea className="form-control"
+                       id=${fieldObj.id}
+                       type=${fieldObj.type}
+                       placeholder=${fieldObj.placeholder}
+                       required=${fieldObj.isRequired}/>
+                </div>
               </div>
-            </div>`
+            </code>`
+
   }
   return {
       element : comp,
@@ -61,12 +86,13 @@ export function getElement(fieldObj){
     }
 }
 
-export function getMetaData(id){
-  if(id.indexOf('input') != -1){
-    return <Input/>
-  } else if(id.indexOf('textarea') != -1){
-    return <TextArea/>
-  }
+export function getMetaData(field,key,event){
+    let fieldType = field.metadata.field
+    if(fieldType.indexOf('input') != -1){
+      return <Input fieldKey={key} metadata={field}/>
+    } else if(fieldType.indexOf('textarea') != -1){
+      return <TextArea fieldKey={key} metadata={field}/>
+    }
 }
 export function getDefaultData(field){
   if(field.indexOf('input') != -1 || field.indexOf('textarea') != -1){
@@ -77,7 +103,7 @@ export function getDefaultData(field){
         labelPosition: 'top',
         isRequired : true,
         placeholder: 'Enter text value',
-        instruction : 'enter text',
+        instruction : '',
         value : 'sample value',
         type : 'text',
         css:{
