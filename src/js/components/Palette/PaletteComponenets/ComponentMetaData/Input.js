@@ -8,7 +8,8 @@ import * as appActions from 'js/actions/appActions';
 
 @connect(state => ({
   updateStore : state.updateStore,
-  updatedFieldKey : state.updatedFieldKey
+  updatedFieldKey : state.updatedFieldKey,
+  elementClicked: state.elementClicked
   }))
 export default class Input extends React.Component {
   constructor(props){
@@ -21,9 +22,11 @@ export default class Input extends React.Component {
 
   }
   componentWillReceiveProps(nextProps){
-    // this.setState({
-    //   fieldKey : nextProps.fieldKey
-    // })
+    if(nextProps.elementClicked){
+      this.setState({
+        fieldKey : nextProps.elementClicked
+      })
+    }
   }
   basicPanelHandler(e){
     this.setState({
@@ -39,6 +42,7 @@ export default class Input extends React.Component {
     let val = e.target.value
     StorageHelper.updateField(this.state.fieldKey,'metadata',field,val)
     this.props.dispatch(appActions.updateStore(this.props.updateStore+1))
+    console.log('here ',this.state.fieldKey)
     this.props.dispatch(appActions.updatedFieldKey(this.state.fieldKey))
 
   }
