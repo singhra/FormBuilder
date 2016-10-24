@@ -21,9 +21,9 @@ export default class Input extends React.Component {
 
   }
   componentWillReceiveProps(nextProps){
-    this.setState({
-      fieldKey : nextProps.fieldKey
-    })
+    // this.setState({
+    //   fieldKey : nextProps.fieldKey
+    // })
   }
   basicPanelHandler(e){
     this.setState({

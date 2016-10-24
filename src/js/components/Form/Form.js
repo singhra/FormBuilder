@@ -140,7 +140,7 @@ export default class Form extends React.Component {
                 <div className={styles['generated-html']}>
                   <div style={{display: 'flex',
                               justifyContent: 'space-between'
-                              }}}><h4>Generated Html</h4>
+                              }}><h4>Generated Html</h4>
                   <CopyToClipboard text={this.state.generatedHtml}
                     onCopy={this.onCopy.bind(this)}>
                     <button
